@@ -1,0 +1,22 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+Wait(1)
+FadeToColor([20.0],0)
+Wait(1)
+LeaveAreaLUA("ARAD02","",[939.371],0)
+ActionOverride(Player2,LeaveAreaLUA("ARAD02","",[964.351],0))
+ActionOverride(Player3,LeaveAreaLUA("ARAD02","",[965.401],0))
+ActionOverride(Player4,LeaveAreaLUA("ARAD02","",[994.381],0))
+ActionOverride(Player5,LeaveAreaLUA("ARAD02","",[1002.428],0))
+ActionOverride(Player6,LeaveAreaLUA("ARAD02","",[1029.408],0))
+MultiPlayerSync()
+Explore()
+SmallWait(1)
+Wait(1)
+FadeFromColor([20.0],0)
+Wait(1)
+EndCutSceneMode()
+END

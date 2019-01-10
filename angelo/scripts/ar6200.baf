@@ -1,0 +1,77 @@
+// No romance
+// not evil
+IF
+Global("StartEndBios","AR6200",1)
+ReputationGT(Player1,9)
+!Global("ADAngelRomanceActive","GLOBAL",2)
+InParty("ADAngel")
+Global("ADAngelBio","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelBio","GLOBAL",1)
+TextScreen("ADAng01")
+SmallWait(1)
+Continue()
+END
+
+// PC ascended, evil
+IF
+Global("StartEndBios","AR6200",1)
+Global("PlayerChoseEssence","GLOBAL",1)
+ReputationLT(Player1,10)
+!Global("ADAngelRomanceActive","GLOBAL",2)
+InParty("ADAngel")
+Global("ADAngelBio","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelBio","GLOBAL",1)
+TextScreen("ADAng02")
+SmallWait(1)
+Continue()
+END
+
+// PC didn't ascend, evil
+IF
+Global("StartEndBios","AR6200",1)
+Global("PlayerChoseEssence","GLOBAL",0)
+ReputationLT(Player1,10)
+!Global("ADAngelRomanceActive","GLOBAL",2)
+InParty("ADAngel")
+Global("ADAngelBio","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelBio","GLOBAL",1)
+TextScreen("ADAng03")
+SmallWait(1)
+Continue()
+END
+
+// Romance, PC didn't ascend
+IF
+Global("StartEndBios","AR6200",1)
+InParty("ADAngel")
+Global("PlayerChoseEssence","GLOBAL",0)
+Global("ADAngelRomanceActive","GLOBAL",2)
+Global("ADAngelBio","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelBio","GLOBAL",1)
+TextScreen("ADAng04")
+SmallWait(1)
+Continue()
+END
+
+// Romance, ascended
+IF
+Global("StartEndBios","AR6200",1)
+InParty("ADAngel")
+Global("PlayerChoseEssence","GLOBAL",1)
+Global("ADAngelRomanceActive","GLOBAL",2)
+Global("ADAngelBio","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelBio","GLOBAL",1)
+TextScreen("ADAng05")
+SmallWait(1)
+Continue()
+END

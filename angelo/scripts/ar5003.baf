@@ -1,0 +1,12 @@
+IF
+Global("ADAngelSuuToBSpawn","GLOBAL",0)
+Dead("ADSawara")
+!Dead("ADGinPac")
+OR(2)
+Global("ADAngelSuuBought","GLOBAL",1)
+Global("ADAngelSuuCharmed","GLOBAL",1)
+THEN
+RESPONSE #100
+CreateCreature("ADSuu25",[1206.925],8) 
+SetGlobal("ADAngelSuuToBSpawn","GLOBAL",1)
+END

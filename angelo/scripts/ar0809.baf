@@ -1,0 +1,16 @@
+IF
+Global("ADAngelVampire","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelVampire","GLOBAL",2)
+CreateCreature("ADAngVam",[1473.332],2)
+END
+
+IF
+Dead("C6Bodhi")
+Global("ADAngelJournal809","GLOBAL",0)
+THEN
+RESPONSE #100
+EraseJournalEntry(@10012)
+SetGlobal("ADAngelJournal809","GLOBAL",1)
+END

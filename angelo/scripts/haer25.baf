@@ -1,0 +1,32 @@
+// Haer'Dalis' drunken singing
+IF
+Global("ADAngelHaerSings","GLOBAL",1)
+InParty(Myself)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("ADAngelHaerSings","GLOBAL",3)
+InParty(Myself)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("ADAngelHaerSings","GLOBAL",5)
+InParty(Myself)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("ADAngelHaerSings","GLOBAL",7)
+InParty(Myself)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END

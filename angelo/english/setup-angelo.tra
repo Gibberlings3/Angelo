@@ -1,0 +1,353 @@
+@0 = ~Angelo NPC MOD for Baldur's Gate II~
+@1 = ~Angelo~
+@2 = ~We meet again. I do hope the season finds you well.~ [adang001]
+@3 = ~I think you can handle this, chief, you got it under control!~ [adang002]
+@4 = ~Good on you, chief! Best career move I ever made.~ [adang003]
+@5 = ~Whuh-whuh-whuh, neh-neh-neh-neh-neh.~ [adang004]
+@6 = ~Well, at least things can't get any worse.~ [adang005]
+@7 = ~~ // breaking point; none
+@8 = ~I get it. I'm the fall guy, eh?~ [adang006]
+@9 = ~Hrrnk--zzzr. Huh? What'd I miss?~ [adang007]
+@10 = ~Woke up this mornin',
+Got yourself a blade
+Your dam never told you that you'd
+Got it made.~ [adang008]
+@11 = ~Justice may be blind, but I'm not.~ [adang009]
+@12 = ~Temei!~ [adang010]
+@13 = ~Kisama!~ [adang011]
+@14 = ~You must be tired of livin'.~ [adang012]
+@15 = ~Horahorahora, shibakuzo kora!~ [adang013]
+@16 = ~~ [adang014]
+@17 = ~Old soldiers never die, they come back as vengeful ghosts!~ [adang015]
+@18 = ~Augh... I knew priests were good for something...~ [adang016]
+@19 = ~Ah, the countryside; where your wife is your cousin and your mistress is a sheep.~ [adang017]
+@20 = ~Gold, ale and whores. Did I mention the whores?~ [adang018]
+@21 = ~Put some holes in the ceiling, get some light; a few armchairs; and it's home!~ [adang019]
+@22 = ~Head hurts. Light hurts my eyes. What did I drink last night?~ [adang020]
+@23 = ~Ah, to be young and have the night! Or to be old and have a half-hour in the evening.~ [adang021]
+@24 = ~Sir yes sir.~ [adang022]
+@25 = ~Holla, chief.~ [adang023]
+@26 = ~Your pleasure?~ [adang024]
+@27 = ~I live... to serve.~ [adang025]
+@28 = ~I can hear you je-e-e-est fine.~ [adang026]
+@29 = ~Think I'll say something amusing?~ [adang027]
+@30 = ~I feel you.~ [adang028]
+@31 = ~With tact and grace.~ [adang029]
+@32 = ~Are you sure about that?~ [adang030]
+@33 = ~On your own head be it.~ [adang031]
+@34 = ~'Least the army had free grub.~ [adang032]
+@35 = ~Why?~ [adang033]
+@36 = ~You know, you sound like your brother.~ [adang034]
+@37 = ~You've heard all my jokes.~ [adang035]
+@38 = ~Woah-hoh! What now?~ [adang036]
+@39 = ~Attari!~ [adang037]
+@40 = ~Chi--! Shimata.~ [adang038]
+@41 = ~Well this isn't working.~ [adang039]
+@42 = ~My, ah, legs aren't what they once were.~ [adang040]
+@43 = ~Meat shields in front, meat shields in front; how hard is this!?~ [adang041]
+@44 = ~You remember Angelo smiling as he condemned you to hang for fraudulent crimes; later looking slightly less than enthusiastic as stood by your brother Sarevok in the Undercity. When asked about his past, Angelo simply says "you know what you know;" but you get the feeling he might tell you more if you pressed him.~
+@45 = ~Sawara~
+@46 = ~Suu~
+@47 = ~Hayate~
+@48 = ~Oliver~
+@49 = ~Pierre~
+@50 = ~Asgurz~
+@51 = ~Desmond Merzer~
+@52 = ~Ginpachi~
+@53 = ~Lady Kaede~
+@54 = ~White Fox~
+@55 = ~Officer Amarant~
+@56 = ~Blackthorne~
+@57 = ~Bounty Hunter~
+@58 = ~Caius Blackwater~
+@59 = ~Lucius Blackwater~
+@60 = ~Marcus Blackwater~
+@61 = ~Mencius Blackwater~
+@62 = ~Angelo's Leathers~
+@63 = ~According to Angelo, this brass-studded leather armor has traveled with him over thirty years, though it is questionable how much of the original suit remains. New patches have been added over time to replace the old, and he is able to trace many to a certain engagement or campaign. He is so used to this "second skin" that he is able to cast spells unencumbered while wearing it and has added several minor enchantments against the elements.
+
+He removes it to sleep (and, rarely, to bathe) and any suggestion that he do so for another reason is met with peevishness and shuffling.
+
+STATISTICS:
+
+AC 5
+Allows arcane spellcasting
+15% electric resist
+15% acid resist
+Only usable by:
+Angelo~
+@64 = ~Sembian Spellbreaks~
+@65 = ~The vital mercantile economy of Sembia gives rise to a flourishing of the inventor's trade. Themselves imbued with potent magic, these gauntlets are able to temporarily disrupt the magical energies of an opponent. According to rumor they were first commissioned by the "dictator merchant" Rieltar Anchev in his youth, and after some fifty prototypes had been created, the inventor was ordered eliminated to prevent their secret from falling into the hands of Rieltar's competitors. Since then they have become rare, but a prized artifact, both in Sembia and abroad.
+
+STATISTICS:
+
+No arcane spellcasting
+5% magic resistance
+Allows the wielder to cast Breach once per day
+Only usable by:
+Anyone~
+@66 = ~Black Lizard Legacy Blade~
+@67 = ~The Black Lizard criminal clan proudly traces its lineage to the earliest period of written history in Kozakura. As long as there has been law, the saying goes, there has been the Black Lizard--although there is a spirited debate among the clans which is, in fact, the most ancient. Various trapping of power are passed down from one Grandmaster of the clan to the next, of which this small blade is one. Over the years, men of different temperaments and abilities have forged it each with their own enchantments, making it a versatile tool in any hands.
+
+STATISTICS:
+
+Wielder memorizes one extra 3rd and one 5th level spell
++5% magic resistance
+Non-detection while equipped
+Abilities: each hit drains 3 hit points from the target and transfers it to the wielder. This will not heal beyond the wielder's maximum.
+
+THACO:  +1 bonus
+Damage:  1D4 + 1
+Damage type:  piercing
+Weight: 1
+Speed Factor: 1
+Proficiency Type: Dagger
+Type:  1-handed
+Requires: 3 Strength
+Not Usable By:
+ Cleric~
+@68 = ~The Fox' Eye~
+@69 = ~Three rings of this kind are known to exist. One such recently fell out of the hands of the gangster and sorcerer Amato Sawara. Imbued by the favor of a Kara-Turan fox deity, prized by thieves and wizards alike, it grants an uncanny speed to its wearer’s movement and increases cunning. A change in physical features is most likely imagination, and reports of whiskers can be dismissed outright. 
+
+STATISTICS:
+
+Improves casting speed by 1
+Allows the wielder to cast improved invisibility once per day
+-15 HP
+Only usable by:
+Mage (single, dual, & multi-class)~
+@70 = ~~
+@71 = ~~
+@72 = ~The Stray Dog~
+@73 = ~This, perhaps, once belonged to a proud warrior, but has since been adapted to the needs of one living as a masterless criminal: honor has been thrown aside in the name of efficacy. A maker's seal seems to have been filed off the blade, and it is now coated with a translucent, chitinous poison.
+
+STATISTICS:
+
+Adds 6 poison damage. A save vs poison negates effects.
+Drains 1 strength on hit. A save vs poison negates effects.
+THACO:  +1 bonus
+Damage:  1D10 + 1
+Damage type:  slashing
+Weight: 5
+Speed Factor: 3
+Proficiency Type: Katana
+Type:  1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage~
+@74 = ~Suu's Diary~
+@75 = ~Written in startlingly fine Kara-Turan script, roughly translated for you by Angelo, this appears to be a diary kept by Sawara's assassin Suu. In the style of old court diaries, it records her increasing boredom and frustration with her stay in Amn, her intense love for and hatred of Sawara, and her contempt for his bodyguard Hayate. Certain passages of interest:
+
+"We swore a vow that, so he said, the heavens themselves could not break--a vow of love between two human beings. Such powers he said were stronger than the gods. But I see now it was the idea of power that interested him, of being able to swear a vow of such power. I was transported by the idea of a man who wanted me for other than my body. But what he wanted from me, and took, was greater--my soul."
+
+"When he thinks no one is looking, Hayate-dono picks his teeth with his dagger."
+
+"Ama-tan, the Emperor's son? A soothsayer told him so and he took it for fact; but of course he would. After all, how could the great Amato Sawara be the son of a drunken gambler?"
+
+"A poem:
+
+Cherished when growing
+The fruits plucked, we are cut down
+Grist for the mill."~
+@78 = ~Otohime's Demon-Sealing-Brand~
+@79 = ~According to Kara-Turn legend, Maya Otohime was a daughter, the last descendant of an ancient line of priests. Her family was charged with the protection of a remote mountain shrine. Thinking the bloodline finished, the demon lord Tenma launched an assault with his armies, and Maya's cowardly attendants abandoned her. Facing legions of devils with only her priestly arts and a ceremonial sword, Maya prayed to the god of the shrine for assistance. Her prayer was heard and the sword was empowered, becoming a sure bane of evil and banishing Tenma back to the hells. 
+
+STATISTICS:
+
+Combat Abilities:
+Regeneration, 1 per 3 seconds
+Immune to death magic
+Permanent Protection from Evil
+THACO:  +4 bonus
+Damage:  1D8 + 4
+Damage type:  slashing
+Weight: 4
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninja-to
+Type:  1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage~
+@80 = ~The Soul of the Deep~
+@81 = ~The trappings of this ancient blade are eaten with rust, but the blade itself glows new as the day it was forged. Few swords of such quality are produced even by the greatest of present-day masters. Also called the Hand of the Gods, it was wielded by the legendary kensai Kashiraga Toranosuke at the battle of Ura-no-Hitte, and its was interred with his bones. Recently, being unearthed, it was sought by a concerned patriot by the name of Amato Sawara.
+
+Toranosuke was a devout follower of the Way, a Kara-Turan faith that stresses the fleeting and empty nature of life. Etched onto the blade is a line from the ancient Kara-Turan epic Chronicle of the War of Wars, said to be his motto: "Remember that life is but a ripple on the surface of this world." It grants its wielder calm and presence of mind, allowing them to move, defend and attack with uncanny speed.
+
+The circumstances under which you retrieved the blade suggest it is cursed. Any man upon whom the gods of Kara-Tur would not look favorably would be ill-advised to take it up.
+
+STATISTICS:
+
+THACO:  +4 bonus
+Damage:  1D10 + 4
+Damage type:  slashing
+Weight: 5
+Speed Factor: 0
+Proficiency Type: Katana
+Type:  1-handed
+Requires: 12 Strength
+Only Usable By:
+Kara-Turans~
+@82 = ~Following his adventures with <CHARNAME>, Angelo Dosan returned to Baldur's Gate, his reputation greatly changed. He stood trial for his involvement in the crimes of Sarevok Anchev, but was granted a pardon by the Grand Dukes; and it was whispered that the implicit favor of a new deity had not a little to do with this. 
+
+With his new wealth, he purchased a small estate near the Friendly Arm Inn, where he promises to entertain those who also traveled with <CHARNAME>. A number of criminal enterprises have been tentatively linked to him, and when questioned by authorities, he claims that "a man must live." Hard proof has never been found against him.
+
+Recently, he was known to pay a visit to Kara-Tur to meet old friends. His mother had since passed away, and he endowed a small fortune on the brothel where she was employed. Rumors also suggest that he was wed to a girl named Sayuri in a small private ceremony, but given his well-known love of falsehood, the veracity of these rumors can be questioned.~
+@83 = ~Following his adventures with <CHARNAME>, Angelo Dosan returned to Baldur's Gate where, being discovered, he was promptly sentenced to death and hanged. Having taken up with a <PRO_MANWOMAN> still more wicked than Sarevok Anchev, the list of his crimes reportedly took several hours to read.
+
+It is said that Angelo climbed the gallows with a cheerful resignation. A priest of Ilmater was present, and before his death, he committed his soul to the auspices of the Suffering God. He expressed no remorse for any deeds, but trusted that Ilmater, knowing the suffering of the world, would accurately judge how much of that suffering he himself was, in fact, responsible for. He is buried in an unmarked traitor's grave south of the Gate.~
+@84 = ~After a hasty wedding in a bombarded Saradush chapel, Angelo Dosan settled down to a happy and leisurely marriage. <CHARNAME> and he traveled together, living for years in obscurity in Neverwinter or Calimshan, only to suddenly appear in the midst of fantastic events. They were known to pay a visit to Angelo's homeland of Kara-Tur, where, learning of his mother's death, he bestowed a large sum on the brothel where she had been employed. He and <CHARNAME> led a fiercely devoted private life, but by the accounts of friends, it was marked more by laughter than by sighing.
+
+At the age of eighty-six, thirty-five years after his marriage to <CHARNAME>, Angelo took gravely ill. He scoffed at magical attempts to prolong his life, insisting he had had from it more than any mortal man could expect. On the second day of Tenebraum he died. A sealed letter found in his desk contained an appeal, lettered by several old companions of <CHARNAME>, to be sent posthumously to the Grand Dukes of Baldur's gate; and the appeal granted (whether out of fear or respect), he was buried in a modest tomb in the city.
+
+It is said that mercenaries, considering him a hero, often pass by the tomb for good fortune; though it should be remembered that his last and most famous commission in the Bhaalspawn Wars was not undertaken for pay, but for the love of a woman.~
+@85 = ~Following his adventures with <CHARNAME>, Angelo Dosan returned to Baldur's Gate where, being discovered, he was promptly sentenced to death and hanged. The list of his crimes reportedly took several hours to read.
+
+It is said that Angelo climbed the gallows with a cheerful resignation. A priest of Ilmater was present, and before his death, he committed his soul to the auspices of the Suffering God. He expressed no remorse for any deeds, but trusted that Ilmater, knowing the suffering of the world, would accurately judge how much of that suffering he himself was, in fact, responsible for. He is buried in an unmarked traitor's grave south of the Gate.~
+@86 = ~As the tales of wicked <CHARNAME>'s deeds grew to epic proportions, the name of Angelo Dosan often appeared beside <CHARNAME>'s. Nearly as canny and evil as his master, he has been responsible for countless deaths and lesser crimes. It seems that he has kept his word to obey <CHARNAME>, although lesser promises have not protected other associates of <CHARNAME> from <CHARNAME>'s displeasure. He prefers to remain close to his master and is rarely seen outside of <PRO_HISHER> company.~
+@87 = ~Sawara's Finger Joint~
+@88 = ~This is the severed uppermost joint of a man's small finger, preserved in oils. The size and color suggest it was once attached to the hand of Amato Sawara.~
+@89 = ~A bag of lotus~
+@90 = ~This silk pouch is filled with coarse, strong-smelling black powder. Although it is no more than could fit in one's cupped hands, you have been told that it is a shockingly large amount of the narcotic black lotus. You have been asked to deliver it to a man named Pierre in Delosar's Inn in the bridge district.~
+@91 = ~The Kaera Paka Sada.~
+@92 = ~A religious manual containing many interesting techniques.~
+@93 = ~Planar Gem~
+@94 = ~This enchanted stone controls the boundaries of Amato Sawara's magically-expanded lair. Its existence is likely the only thing preventing the lair from collapsing, and with Sawara's death, it presents the only way of escape. Using it to return to the streets will likely seal the lair forever.~
+@95 = ~Angelo's Wedding Ring~
+@96 = ~This ring appears to be roughly carved from a single piece of jadelite. According to the mercenary Angelo Dosan, it was prized off the finger of a green hag in a campaign on the Sembian border. Later it was bestowed on his lawful bride in a hasty but memorable ceremony in Saradush.
+
+STATISTICS:
+
+Immunity to backstab
+Damage resistance %25 vs. bludgeoning
++1 to Constitution
++1 to Intelligence
+Usable by:
+Anyone~
+@97 = ~Bounty Notice~
+@98 = ~Be it known to all, that a bounty has been placed upon the head of Angelo Dosan.
+
+Last seen in the area of Baldur's Gate, this person is to be killed in quick order.
+
+This offer has been extended to all appropriate guilds.
+
+Those returning with proof of the deed shall receive no less than eight hundred coins of gold.~
+@99 = ~Thug~
+@100 = ~Guard~
+@101 = ~Seline~
+@102 = ~Master Ninja~
+@103 = ~...~
+@104 = ~I mean you no harm.~ [adangS04]
+@105 = ~I serve the Flaming Fist!~ [adangFIS]
+@106 = ~Lady Seline~
+@107 = ~Lord Feverstone~
+@108 = ~Bodyguard~
+@109 = ~Maid~
+@110 = ~Tamoko's Letter~
+@111 = ~My Master,
+Keeper of My Heart,
+
+I go now to die at your command. I am not afraid. I do not bear you any grudge for the wrongs you have done me. I told you that my heart was yours, to trample underfoot if you wished, and I cannot protest now that you have done so.
+
+Know that I once thought to betray you, but no sooner had the thought flamed up then it was stifled beneath the weight of my love. I will be true should all the stars in the heavens fall from their orbits, and the seas overwhelm the land.
+
+You are a man of greatness. If I should weep, it is not for the end of my own life, but that you will never be the glory of the realms I knew you could become. For my sins, when I die, I will surely be committed to the lowest sphere of the hells. But should you survive this fight--although I fear that even you have met your match in <CHARNAME>--your mistress humbly begs that if there is one fragment of love remaining in your breast, you travel to the great Hasakura temple in Wa, in Kara-Tur. Along with this letter I have entrusted a jewel worth more than five hundred gold. I beseech you to use the money to commission a funeral rite and prayers for my soul, that I might soon attain a better rebirth.
+
+Know this, my lord: as the Way teaches, there is no true beginning and no true end. If you do this for me then we will meet again, on a far-off day, in the place promised to us. This I know.   
+
+Yours in the ranks of death,
+Suzukawa Tamoko~
+@112 = ~Greater Pearl Sutra Necklace~
+@113 = ~The golden locket on the end of this chain contains a miniature copy of the Greater Pearl Sutra. In certain esoteric branches of the Way, a Kara-Turan faith, holy documents such as these are believed to have a literal and innate power over evil. The Greater Pearl Sutra stresses the transience of mortal life, and as such is associated with protection against the undead and negative plane.
+
+However, while most understandings of the Way do not involve deities, only a person of some spiritual sensitivity is able to gain the benefits of the amulet.
+
+Immunity to level drain
+10% magic resistance
+
+Only usable by: Clerics, single, multi or dual-classed~
+@114 = ~Last Regrets +2~
+@115 = ~This lacquer-plate armor is stained red with the blood of lady Shoko Hisagawa of Kara-Tur. An extremely rare specimen of a female samurai, Lady Shoko served her lord with a devotion and skill that awakened the envy of her male colleagues, who schemed with a palace sorcerer to defame her. It was known that Lady Shoko loved and was beloved by her lord's eldest son, but due to her station she was determined to carry her love to the grave; however magically-falsified evidence implicated them in a tryst. Lady Shoko was blamed and with a heavy heart, her lord sentenced her to die. Before she cut open her stomach, she announced that while she bore no grudge against her enemies, she would offer proof from beyond the grave of her innocence--the incarnadine stain now covering her armor. When the stain appeared, the terrified palace sorcerer and his conspirators fled, while those who maintained a scrap of honor followed Lady Shoko in willful death.
+
+STATISTICS:
+
+Immunity to disease
+10% magic resistance
+
+Armor Class: 2
+Weight: 7
+Requires: 8 Strength
+Not Usable By:
+ Druid 
+ Mage 
+ Thief
+ Kensai
+ Monk
+ Archer
+ Beast Master
+ Stalker~
+@116 = ~Oyaji's Store~
+@117 = ~Angelo's Body~
+@118 = ~Angelo was captured by Bodhi and infected with vampirism, forcing you to slay him. There may be some way to revive him, though you do not know what it would be.~
+@119 = ~Jiki-ketsu-gakki~
+@120 = ~Sakaki~
+@121 = ~Oyaji~
+@122 = ~Angelo's alternative portraits~
+@123 = ~Angelo's portrait, edited by SisterVigilante~
+@124 = ~Angelo's alternative portrait by Amaurea~
+@125 = ~Angelo's alternative portrait from http://cassinus.free.fr~
+@126 = ~Flesh is grass.~ [adang811]
+@127 = ~...~
+@128 = ~Seven days.~ [adang759]
+@129 = ~Irashaimase!~ [adang755]
+@130 = ~Yoterashai, miterashai!~ [adang756]
+@131 = ~I am sure this is fascinating, but would you care to make a purchase?~ [adang757]
+@132 = ~Yamenasai!~ [adang758]
+@133 = ~Yilli~
+@134 = ~Senoj~
+@135 = ~Akasha~
+@136 = ~This component requires the Angelo NPC mod to be installed.~
+@137 = ~Bring me Angelo, the human fighter/mage.~
+@138 = ~Bring me my lover, Angelo.~
+@10000 = ~Bounty Hunters
+
+Bounty hunters are after Angelo, as he in typical fashion failed to inform me. Hopefully we can handle anything the Fist can throw at us.~
+@10001 = ~Bounty Hunters
+
+With the death of Captain Merzer, Angelo expects the bounty hunter attacks will stop. He'd better be right.~
+@10002 = ~Angelo in Trouble, Again
+
+Angelo has gotten himself arrested as an associate of the man who forged his identity papers. I suppose I should go look into it.~
+@10003 = ~An Old Friend?
+
+It seems Angelo was bailed out by a man claiming to be a friend of his, Amato Sawara. Angelo seems to have his reservations. Still, Sawara invited us to his home, and we may go see what he wants. I was told to look for a 'small white friend' of his in the Bridge District, whatever that means...~
+@10004 = ~The Sword
+
+Sawara has commissioned us to retrieve an old Kara-Turan relic from an art dealer, Seline, who should be found in the government district. He also wants Seline's severed head.~
+@10005 = ~The Sword
+
+Sawara is dead. I have returned the relic, an ancient sword, to a man claiming to be a representative of the government of Kozakura. Angelo was none too pleased.~
+@10006 = ~The Sword
+
+Sawara is dead. I have decided to keep the relic, an ancient sword, in spite of the request of a man claiming to be an agent of the Kozakuran government. It may be of use to us.~
+@10007 = ~Suu's Warning
+
+I have met Suu, an old associate of Amato Sawara, in Saradush. In return for a grizzly trophy, she warned me that Ginpachi--a powerful ninja, it seems--will track me down in an attempt to retrieve the sword. This will likely not end pleasantly for one of us.~
+@10008 = ~Suu's Warning
+
+Ginpachi is dead. I may have provoked the ire of a kingdom, but I may have already taken the best they can field against me.~
+@10009 = ~Drama
+
+I have accepted Sarevok's offer to serve me, but Angelo is vocally unhappy with his presence in our company. Hopefully they will resolve this between themselves--I have enough to deal with without playing go-between.~
+@10010 = ~Drama
+
+Now that Sarevok seems to be viewing the world differently, he and Angelo have reached a grudging peace. I can't but think this bodes well for both of them. In any case, for the time being at least, I think I've heard the last of it.~
+@10011 = ~An Old Friend?
+
+Angelo's 'old friend', Sawara, has contracted me for a job: drug running. I am to deliver a large amount of back lotus to a man named Pierre on the second floor of Delosar's Inn. It seems I won't be able to find out what Sawara really wants until this is taken care of. Should I not wish to, though, perhaps I can find someone else who may be interested in this article... such as the Chief Inspector, or another criminal.~
+@10012 = ~The Final Battle with Bodhi.
+
+Bodhi appeared in an ambush shortly before I reached her haven, warning me that she was aware of my pursuit and stealing from me the one person that is dearest to my heart: Angelo.  Before she vanished and unleashed more of her undead creations upon me, Bodhi warned me that if I continue I will lose even more than I thought possible.  I cannot give up on the Rhynn Lanthorn... but now the life and immortal soul of the one I love is at stake, as well!~

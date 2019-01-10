@@ -1,0 +1,10 @@
+// Suu left
+IF
+Global("ADAngelSuuSex","GLOBAL",3)
+PartyRested()
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSuuSex","GLOBAL",4)
+ActionOverride(Player1,StartDialog("player1",Player1))
+END
+

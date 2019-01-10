@@ -1,0 +1,187 @@
+@63 = ~According to Angelo, this brass-studded leather armor has traveled with him over thirty years, though it is questionable how much of the original suit remains. New patches have been added over time to replace the old, and he is able to trace many to a certain engagement or campaign. He is so used to this "second skin" that he is able to cast spells unencumbered while wearing it and has added several minor enchantments against the elements.
+
+He removes it to sleep (and, rarely, to bathe) and any suggestion that he do so for another reason is met with peevishness and shuffling.
+
+STATISTICS:
+
+Equipped abilities:
+– Acid Resistance: +15%
+– Electrical Resistance: +15%
+– Spellcasting is not disabled
+
+Armor Class: 5 (4 vs. piercing and missile, 3 vs. slashing)
+Requires:
+ 15 Strength
+
+Weight: 7
+~
+@65 = ~The vital mercantile economy of Sembia gives rise to a flourishing of the inventor's trade. Themselves imbued with potent magic, these gauntlets are able to temporarily disrupt the magical energies of an opponent. According to rumor they were first commissioned by the "dictator merchant" Rieltar Anchev in his youth, and after some fifty prototypes had been created, the inventor was ordered eliminated to prevent their secret from falling into the hands of Rieltar's competitors. Since then they have become rare, but a prized artifact, both in Sembia and abroad.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +5%
+– Arcane spellcasting is disabled
+
+Charge abilities:
+– Breach once per day (Save vs. Breath negates)
+  Special: Dispels all specific and combat protections on target
+  Range: 40 ft.
+  Area of Effect: 1 creature
+
+Weight: 2
+~
+@67 = ~The Black Lizard criminal clan proudly traces its lineage to the earliest period of written history in Kozakura. As long as there has been law, the saying goes, there has been the Black Lizard--although there is a spirited debate among the clans which is, in fact, the most ancient. Various trapping of power are passed down from one Grandmaster of the clan to the next, of which this small blade is one. Over the years, men of different temperaments and abilities have forged it each with their own enchantments, making it a versatile tool in any hands.
+
+STATISTICS:
+
+Combat abilities:
+– Each hit drains 3 Hit Points from the target and transfers it to the wielder. This will not heal beyond the wielder's maximum.
+
+Equipped abilities:
+– Magic Resistance: +5%
+– While hidden or invisible, the wearer is non-detectable by magical means such as Detect Invisibility and scrying
+– Can cast one extra 3rd- and 5th-level wizard spell 
+
+THAC0: +1
+Damage: 1d4+1 (piercing)
+Speed Factor: 1
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1
+~
+@69 = ~Three rings of this kind are known to exist. One such recently fell out of the hands of the gangster and sorcerer Amato Sawara. Imbued by the favor of a Kara-Turan fox deity, prized by thieves and wizards alike, it grants an uncanny speed to its wearer's movement and increases cunning. A change in physical features is most likely imagination, and reports of whiskers can be dismissed outright. 
+
+STATISTICS:
+
+Charge abilities:
+
+– Improved Invisibility once per day
+  Range: Touch
+  Duration: 1 turn
+  Area of Effect: Caster
+
+Equipped abilities:
+– Improves casting speed by 1
+– Hit Points: -15 
+
+Weight: 0
+~
+@73 = ~This, perhaps, once belonged to a proud warrior, but has since been adapted to the needs of one living as a masterless criminal: honor has been thrown aside in the name of efficacy. A maker's seal seems to have been filed off the blade, and it is now coated with a translucent, chitinous poison.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target must save vs. Poison or suffer 6 points of poison damage
+– Hit target must save vs. Poison or lose 1 point of strength for two rounds
+
+THAC0: +1
+Damage: 1d10+1 (slashing)
+Speed Factor: 3
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 5
+~
+@79 = ~According to Kara-Turn legend, Maya Otohime was a daughter, the last descendant of an ancient line of priests. Her family was charged with the protection of a remote mountain shrine. Thinking the bloodline finished, the demon lord Tenma launched an assault with his armies, and Maya's cowardly attendants abandoned her. Facing legions of devils with only her priestly arts and a ceremonial sword, Maya prayed to the god of the shrine for assistance. Her prayer was heard and the sword was empowered, becoming a sure bane of evil and banishing Tenma back to the hells. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protection From Evil
+– Regenerate 1 Hit Point every 3 seconds
+– Immune to death magic
+
+THAC0: +4
+Damage: 1d8+4 (slashing)
+Speed Factor: 0
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4
+~
+@81 = ~The trappings of this ancient blade are eaten with rust, but the blade itself glows new as the day it was forged. Few swords of such quality are produced even by the greatest of present-day masters. Also called the Hand of the Gods, it was wielded by the legendary kensai Kashiraga Toranosuke at the battle of Ura-no-Hitte, and its was interred with his bones. Recently, being unearthed, it was sought by a concerned patriot by the name of Amato Sawara.
+
+Toranosuke was a devout follower of the Way, a Kara-Turan faith that stresses the fleeting and empty nature of life. Etched onto the blade is a line from the ancient Kara-Turan epic Chronicle of the War of Wars, said to be his motto: "Remember that life is but a ripple on the surface of this world." It grants its wielder calm and presence of mind, allowing them to move, defend and attack with uncanny speed.
+
+The circumstances under which you retrieved the blade suggest it is cursed. Any man upon whom the gods of Kara-Tur would not look favorably would be ill-advised to take it up.
+
+STATISTICS:
+
+THAC0: +4
+Damage: 1d10+4 (slashing)
+Speed Factor: 0
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 15 Strength
+
+Weight: 5
+~
+@88 = ~This is the severed uppermost joint of a man's small finger, preserved in oils. The size and color suggest it was once attached to the hand of Amato Sawara.
+
+STATISTICS:
+
+Weight: 1
+~
+@90 = ~This silk pouch is filled with coarse, strong-smelling black powder. Although it is no more than could fit in one's cupped hands, you have been told that it is a shockingly large amount of the narcotic black lotus. You have been asked to deliver it to a man named Pierre in Delosar's Inn in the bridge district.
+
+STATISTICS:
+
+Weight: 5
+~
+@94 = ~This enchanted stone controls the boundaries of Amato Sawara's magically-expanded lair. Its existence is likely the only thing preventing the lair from collapsing, and with Sawara's death, it presents the only way of escape. Using it to return to the streets will likely seal the lair forever.
+
+STATISTICS:
+
+Weight: 1
+~
+@96 = ~This ring appears to be roughly carved from a single piece of jadelite. According to the mercenary Angelo Dosan, it was prized off the finger of a green hag in a campaign on the Sembian border. Later it was bestowed on his lawful bride in a hasty but memorable ceremony in Saradush.
+
+Equipped abilities:
+– Immunity to backstab
+– Constitution: +1
+– Intelligence: +1
+– Resistance to Crushing Damage: +25%
+
+Weight: 1
+~
+@113 = ~The golden locket on the end of this chain contains a miniature copy of the Greater Pearl Sutra. In certain esoteric branches of the Way, a Kara-Turan faith, holy documents such as these are believed to have a literal and innate power over evil. The Greater Pearl Sutra stresses the transience of mortal life, and as such is associated with protection against the undead and negative plane.
+
+However, while most understandings of the Way do not involve deities, only a person of some spiritual sensitivity is able to gain the benefits of the amulet.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+– Immunity to level drain
+
+Weight: 1
+~
+@115 = ~This lacquer-plate armor is stained red with the blood of lady Shoko Hisagawa of Kara-Tur. An extremely rare specimen of a female samurai, Lady Shoko served her lord with a devotion and skill that awakened the envy of her male colleagues, who schemed with a palace sorcerer to defame her. It was known that Lady Shoko loved and was beloved by her lord's eldest son, but due to her station she was determined to carry her love to the grave; however magically-falsified evidence implicated them in a tryst. Lady Shoko was blamed and with a heavy heart, her lord sentenced her to die. Before she cut open her stomach, she announced that while she bore no grudge against her enemies, she would offer proof from beyond the grave of her innocence--the incarnadine stain now covering her armor. When the stain appeared, the terrified palace sorcerer and his conspirators fled, while those who maintained a scrap of honor followed Lady Shoko in willful death.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+– Immunity to disease and poison
+
+Armor Class: 2 (-2 vs. slashing)
+Requires:
+ 8 Strength
+
+Weight: 7
+~
+@118 = ~Angelo was captured by Bodhi and infected with vampirism, forcing you to slay him. There may be some way to revive him, though you do not know what it would be.
+
+STATISTICS:
+
+Weight: 100
+~

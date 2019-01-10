@@ -1,0 +1,8 @@
+IF
+Global("ADAngelSawaraSpawn","GLOBAL",1)
+THEN
+RESPONSE #100
+CreateCreature("ADSawara",[900.500],0)
+CreateCreature("ADGuard",[850.575],0)
+SetGlobal("ADAngelSawaraSpawn","GLOBAL",2)
+END

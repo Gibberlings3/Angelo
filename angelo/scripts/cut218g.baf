@@ -1,0 +1,8 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+CreateVisualEffectObject("SPFLESHS","ADShar")
+ActionOverride("ADShar",DestroySelf())
+END

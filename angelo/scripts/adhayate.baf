@@ -1,0 +1,22 @@
+IF
+AttackedBy([GOODCUTOFF],DEFAULT)
+Allegiance(Myself,NEUTRAL)
+Global("ADAngelSawaraAttacked","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSawaraAttacked","LOCALS",1)
+SetGlobal("ADAngelPCAttackedSawara","GLOBAL",1)
+Enemy()
+END
+
+IF
+OR(2)
+Global("ADAngelPCAttackedSawara","GLOBAL",1)
+Global("ADAngelGrandDuel","GLOBAL",1)
+Allegiance(Myself,NEUTRAL)
+Global("ADAngelSawaraHostile","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSawaraHostile","LOCALS",1)
+Enemy()
+END

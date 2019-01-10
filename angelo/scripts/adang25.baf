@@ -1,0 +1,686 @@
+// Initiate dialogue
+IF
+Global("ADAngelSummoned","GLOBAL",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+Wait(1)
+END 
+
+// Yaga-Shura army reaction
+IF
+Global("ADAngelYagaCamp","GLOBAL",0)
+AreaCheck("AR5203")
+InParty(Myself)
+!Dead("yaga01")
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelYagaCamp","GLOBAL",1)
+END
+
+IF
+Global("ADAngelYagaCamp","GLOBAL",1)
+InParty(Myself)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Amkethran
+IF 
+Global("ADAngelToBInt1","GLOBAL",1)
+Global("ADAngelAmketh","GLOBAL",0)
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelAmketh","GLOBAL",1)
+END
+
+IF 
+Global("ADAngelAmketh","GLOBAL",1)
+InParty(Myself)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Sendai and Abazigal are dead
+IF
+Global("ADAngelBothBhaalDead","GLOBAL",0)
+InParty(Myself)
+Dead("Sendai")
+Dead("Abazigal1")
+!AreaCheck("AR4500")
+!AreaType(DUNGEON)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelBothBhaalDead","GLOBAL",2)
+END
+
+IF
+Global("ADAngelBothBhaalDead","GLOBAL",2)
+InParty(Myself)
+See(Player1)
+!AreaCheck("AR4500")
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+Interact(Player1)
+END
+
+// Saradush fall
+IF
+Global("ADAngelSaraFalls","GLOBAL",0)
+Global("ADAngelRomanceActive","GLOBAL",2)
+InParty(Myself)
+Dead("yaga01")
+PartyRested()
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSaraFalls","GLOBAL",1)
+END
+
+IF
+Global("ADAngelSaraFalls","GLOBAL",1)
+InParty(Myself)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// ToB Heritage talk (non-romance only)
+IF
+Global("ADAngelNonRHeritage","GLOBAL",0)
+!Global("ADAngelRomanceActive","GLOBAL",2)
+InParty(Myself)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("ADAngelNonRHerTimer","GLOBAL",3600)
+SetGlobal("ADAngelNonRHeritage","GLOBAL",1)
+END
+
+IF
+Global("ADAngelNonRHeritage","GLOBAL",1)
+InParty(Myself)
+RealGlobalTimerExpired("ADAngelNonRHerTimer","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelNonRHeritage","GLOBAL",2)
+END
+
+IF
+Global("ADAngelNonRHeritage","GLOBAL",2)
+InParty(Myself)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Romance
+IF
+Global("ADAngelRomanceActive","GLOBAL",2)
+InParty(Myself)
+Global("ADAngelToBLoveTalk","GLOBAL",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("ADAngelToBTimer","GLOBAL",60)
+SetGlobal("ADAngelToBLoveTalk","GLOBAL",1)
+END
+
+IF 
+Global("ADAngelRomanceActive","GLOBAL",2)
+InParty(Myself)
+!AreaType(DUNGEON)
+Global("ADAngelToBLoveTalk","GLOBAL",1)
+RealGlobalTimerExpired("ADAngelToBTimer","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+PlaySong(0)
+PlaySound("adang")
+SetGlobal("ADAngelToBLoveTalk","GLOBAL",2)
+END
+
+IF 
+Global("ADAngelRomanceActive","GLOBAL",2)
+InParty(Myself)
+Global("ADAngelMarried","GLOBAL",1)
+!AreaType(DUNGEON)
+OR(3)
+Global("ADAngelToBLoveTalk","GLOBAL",3)
+Global("ADAngelToBLoveTalk","GLOBAL",7)
+Global("ADAngelToBLoveTalk","GLOBAL",9)
+RealGlobalTimerExpired("ADAngelToBTimer","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+PlaySong(0)
+PlaySound("adang")
+IncrementGlobal("ADAngelToBLoveTalk","GLOBAL",1)
+END
+
+IF 
+Global("ADAngelRomanceActive","GLOBAL",2)
+InParty(Myself)
+Global("ADAngelMarried","GLOBAL",1)
+!AreaType(DUNGEON)
+PartyRested()
+Global("ADAngelToBLoveTalk","GLOBAL",5)
+RealGlobalTimerExpired("ADAngelToBTimer","GLOBAL")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+PlaySong(0)
+PlaySound("adang")
+IncrementGlobal("ADAngelToBLoveTalk","GLOBAL",1)
+END
+
+IF 
+Global("ADAngelRomanceActive","GLOBAL",2)
+InParty(Myself)
+OR(5)
+Global("ADAngelToBLoveTalk","GLOBAL",2)
+Global("ADAngelToBLoveTalk","GLOBAL",4)
+Global("ADAngelToBLoveTalk","GLOBAL",6)
+Global("ADAngelToBLoveTalk","GLOBAL",8)
+Global("ADAngelToBLoveTalk","GLOBAL",10)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Master Wraith
+IF
+Global("ADAngelAfterWraith","GLOBAL",0)
+Global("ADAngelLovedOne","GLOBAL",6)
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+GlobalGT("WraithPunish","GLOBAL",0) 
+THEN
+RESPONSE #100
+SetGlobal("ADAngelAfterWraith","GLOBAL",1)
+END
+
+IF
+Global("ADAngelAfterWraith","GLOBAL",1)
+InParty(Myself)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// The Wedding
+
+IF
+InParty(Myself)
+Global("ADAngelWeddingRuse","GLOBAL",0)
+Global("ADAngelRomanceActive","GLOBAL",2)
+!See("MEL01")
+AreaCheck("AR5000")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelWeddingRuse","GLOBAL",1)
+END
+
+IF
+Global("ADAngelWeddingRuse","GLOBAL",1)
+InParty(Myself)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+InParty(Myself)
+Global("ADAngelWeddingRuse","GLOBAL",3)
+AreaCheck("AR5000")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelWeddingRuse","GLOBAL",4)
+END
+
+IF
+Global("ADAngelWeddingRuse","GLOBAL",4)
+InParty(Myself)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+InParty(Myself)
+Global("ADAngelWeddingRuse","GLOBAL",5)
+Global("ADAngelWedding","GLOBAL",0)
+Global("ADAngelRomanceActive","GLOBAL",2)
+AreaCheck("AR5004")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+PlaySong(0)
+PlaySound("adang")
+SetGlobal("ADAngelWedding","GLOBAL",1)
+END
+
+IF
+Global("ADAngelWedding","GLOBAL",1)
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Singing after the wedding
+IF
+Global("ADAngelHaerSings","GLOBAL",2)
+InParty(Myself)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("ADAngelHaerSings","GLOBAL",4)
+InParty(Myself)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("ADAngelHaerSings","GLOBAL",6)
+InParty(Myself)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("ADAngelHaerSings","GLOBAL",8)
+InParty(Myself)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Sarevok talk
+IF
+Global("ADAngelSarevok","GLOBAL",3)
+RealGlobalTimerExpired("ADAngelSarevokTimer","GLOBAL")
+InParty(Myself)
+InParty("Sarevok")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSarevok","GLOBAL",4)
+END
+
+IF
+Global("ADAngelSarevok","GLOBAL",4)
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+Interact(Player1)
+END
+
+// Spiders
+IF
+Global("ADAngelSpiders","GLOBAL",0)
+InParty(Myself)
+AreaCheck("AR6103")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSpiders","GLOBAL",1)
+END
+
+IF
+Global("ADAngelSpiders","GLOBAL",1)
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Angelo-Anomen script kill
+IF 
+Global("ADAngelWonAnomenToB","GLOBAL",0)
+Global("ADAngelRomanceActive","GLOBAL",2)
+OR(2)
+Global("AnomenRomanceActive","GLOBAL",1)
+Global("AnomenRomanceActive","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelWonAnomenToB","GLOBAL",1)
+SetGlobal("AnomenRomanceActive","GLOBAL",3)
+END
+
+// Hotkey fixer
+IF
+HotKey(K)
+THEN
+RESPONSE #100
+StartCutSceneMode()
+StartCutScene("ADAngelF")
+END
+
+// Gin encounter
+IF
+InParty(Myself)
+AreaCheck("AR5200")
+Global("ADAngelGinEncounter2","GLOBAL",0)
+THEN
+RESPONSE #100
+StartCutSceneMode()
+CreateCreatureObjectOffset("ADNin01",Player1,[40.20])  
+CreateCreatureObjectOffset("ADNin02",Player1,[20.40])  
+CreateCreatureObjectOffset("ADKaede",Player1,[30.30])  
+CreateCreatureObjectOffset("ADGINPAC",Player1,[50.50])  
+ActionOverride("ADGINPAC",ChangeAIScript("ADNinja",OVERRIDE))
+ActionOverride("ADGINPAC",Enemy())
+EraseJournalEntry(@10007)
+AddJournalEntry(@10008,QUEST_DONE)
+SetGlobal("ADAngelGinEncounter2","GLOBAL",1)
+EndCutSceneMode()
+END
+
+// Gin encounter reaction
+IF
+InParty(Myself)
+Global("ADAngelGinpacReaction","GLOBAL",0)
+Dead("ADGINPAC")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelGinpacReaction","GLOBAL",1)
+END
+
+IF
+Global("ADAngelGinpacReaction","GLOBAL",1)
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+// Imoen sequence, 2
+IF
+InParty(Myself)
+InParty("Imoen2")
+RealGlobalTimerExpired("ADAngelImmyToBTimer","GLOBAL")
+Global("ADAngelImmySeq","GLOBAL",3)
+See("Imoen2")
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("Imoen2",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+IncrementGlobal("ADAngelImmySeq","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+InParty("Imoen2")
+Global("ADAngelImmySeq","GLOBAL",4)
+See("Imoen2")
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("Imoen2",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+Interact("Imoen2")
+END
+
+// Barmaid
+IF
+InParty(Myself)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+See(Player1)
+AreaCheck("AR5501") 
+Global("ADAngelBathFlirt","GLOBAL",4)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelBathFlirt","GLOBAL",5)
+CreateCreatureObjectOffset("ADTOBBAR","ADAngel",[10.10]) 
+ActionOverride("ADTOBBAR",Dialogue("ADAngel"))
+END
+
+// Sarevok joins and sees Angelo
+IF
+InParty("Sarevok")
+InParty("ADAngel")
+Alignment("Sarevok",MASK_EVIL)
+Global("ADAngelSarevok","GLOBAL",0)
+See(Player1)
+See("ADAngel")
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck("Sarevok",CD_STATE_NOTVALID)
+!StateCheck("ADAngel",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSarevok","GLOBAL",2)
+END
+
+IF
+Global("ADAngelSarevok","GLOBAL",2)
+InParty("Sarevok")
+InParty("ADAngel")
+See(Player1)
+See("ADAngel")
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck("Sarevok",CD_STATE_NOTVALID)
+!StateCheck("ADAngel",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride("Sarevok",Interact("ADAngel"))
+END
+
+// Talk number 3 - with PC
+IF
+InParty("Sarevok")
+InParty("ADAngel")
+RealGlobalTimerExpired("ADAngelSarevokTimer","GLOBAL")
+Alignment("Sarevok",MASK_EVIL)
+Global("ADAngelSarevok","GLOBAL",5)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck("Sarevok",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSarevok","GLOBAL",6)
+END
+
+IF
+InParty("Sarevok")
+Global("ADAngelSarevok","GLOBAL",6)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck("Sarevok",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride("Sarevok",Interact(Player1))
+END
+
+// Talk number 4 - between Sarevok and Angelo
+IF
+InParty("Sarevok")
+InParty("ADAngel")
+RealGlobalTimerExpired("ADAngelSarevokTimer","GLOBAL")
+Alignment("Sarevok",MASK_EVIL)
+Global("ADAngelSarevok","GLOBAL",7)
+See("ADAngel")
+!StateCheck("ADAngel",CD_STATE_NOTVALID)
+!StateCheck("Sarevok",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSarevok","GLOBAL",8)
+END
+
+IF
+InParty("Sarevok")
+Global("ADAngelSarevok","GLOBAL",8)
+See("ADAngel")
+!StateCheck("ADAngel",CD_STATE_NOTVALID)
+!StateCheck("Sarevok",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride("Sarevok",Interact("ADAngel"))
+END
+
+// Talk number 5 - all three again
+IF
+InParty("Sarevok")
+InParty("ADAngel")
+RealGlobalTimerExpired("ADAngelSarevokTimer","GLOBAL")
+Alignment("Sarevok",MASK_EVIL)
+Global("ADAngelSarevok","GLOBAL",9)
+See(Player1)
+See("ADAngel")
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck("Sarevok",CD_STATE_NOTVALID)
+!StateCheck("ADAngel",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSarevok","GLOBAL",10)
+END
+
+IF
+Global("ADAngelSarevok","GLOBAL",10)
+InParty("Sarevok")
+InParty("ADAngel")
+See(Player1)
+See("ADAngel")
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck("Sarevok",CD_STATE_NOTVALID)
+!StateCheck("ADAngel",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride("Sarevok",Interact("ADAngel"))
+END
+
+// Yaga-Shura army reaction
+IF
+Global("ADAngelYagaCamp","GLOBAL",2)
+AreaCheck("AR5203")
+InParty("Sarevok")
+!Dead("yaga01")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck("Sarevok",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelYagaCamp","GLOBAL",3)
+END
+
+IF
+Global("ADAngelYagaCamp","GLOBAL",3)
+InParty("Sarevok")
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck("Sarevok",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+ActionOverride("Sarevok",StartDialogueNoSet(Player1))
+END

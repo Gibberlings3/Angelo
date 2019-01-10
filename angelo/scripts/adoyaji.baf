@@ -1,0 +1,6 @@
+IF
+Global("ADAngSakakiTalk","GLOBAL",3)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END

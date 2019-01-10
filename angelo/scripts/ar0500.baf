@@ -1,0 +1,20 @@
+IF
+GlobalGT("ADAngelLeftPrison","GLOBAL",1)
+Global("ADAngelFoxSpawned","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("ADFox",[2418.1326],0) 
+SetGlobal("ADAngelFoxSpawned","GLOBAL",1)
+END
+
+IF
+Global("ADAngelFoxSpawned","GLOBAL",1)
+OR(3)
+Dead("ADSawara")
+Global("ADSawaraIsNotHome","GLOBAL",1)
+Global("ADAngelSawaraGone","GLOBAL",1)
+THEN
+RESPONSE #100
+ActionOverride("ADFox",DestroySelf()) 
+SetGlobal("ADAngelFoxSpawned","GLOBAL",2)
+END

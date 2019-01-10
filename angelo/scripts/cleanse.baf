@@ -1,0 +1,9 @@
+IF
+Contains("ADAngBod",Myself)
+Contains("MISCBP",Myself)
+Global("ADAngelCleanseVampire","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelCleanseVampire","GLOBAL",1)
+ActionOverride(Player1,StartDialog("player1",Player1))
+END

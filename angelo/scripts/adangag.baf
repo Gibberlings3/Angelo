@@ -1,0 +1,18 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+Wait(1)
+SetGlobal("ADAngSakakiTalk","GLOBAL",4)
+AddExperienceParty(13750)
+DestroyItem("ADAngBod")
+Wait(1)
+CreateVisualEffect("SPFLESHS",[2858.1921])
+Wait(1)
+MoveGlobal("AR0900","ADAngel",[2858.1921])
+ActionOverride("ADAngel",DialogInterrupt(TRUE))
+ActionOverride("ADAngel",ChangeAIScript("ADAngel",OVERRIDE))
+Wait(1)
+ActionOverride("ADAngel",StartDialogueNoSet(Player1))
+END

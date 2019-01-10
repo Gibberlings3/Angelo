@@ -1,0 +1,35 @@
+// Hi
+IF
+See(Player1)
+GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Global("ADSuuSaidHi","GLOBAL",0)
+THEN
+RESPONSE #100
+DisplayStringHead(Myself,~Good evening, my <PRO_LADYLORD>.~)
+SetGlobal("ADSuuSaidHi","GLOBAL",1)
+END
+
+IF
+AttackedBy([GOODCUTOFF],DEFAULT)
+Allegiance(Myself,NEUTRAL)
+Global("ADAngelSawaraAttacked","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSawaraAttacked","LOCALS",1)
+SetGlobal("ADAngelPCAttackedSawara","GLOBAL",1)
+Enemy()
+END
+
+IF
+OR(2)
+Global("ADAngelPCAttackedSawara","GLOBAL",1)
+Global("ADAngelGrandDuel","GLOBAL",1)
+Allegiance(Myself,NEUTRAL)
+!Global("ADAngelSuuBought","GLOBAL",1)
+!Global("ADAngelSuuCharmed","GLOBAL",1)
+Global("ADAngelSawaraHostile","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelSawaraHostile","LOCALS",1)
+Enemy()
+END

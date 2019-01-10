@@ -1,0 +1,19 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+Wait(1)
+FadeToColor([20.0],0)
+Wait(1)
+JumpToPoint([456.538])
+ActionOverride("ADAngel",JumpToPoint([472.541]))
+FaceObject("ADAngel")
+Wait(1)
+ActionOverride("ADAngel",FaceObject(Player1))
+Wait(1)
+FadeFromColor([20.0],0)
+MoveViewObject(Player1,INSTANT)
+Wait(1)
+ActionOverride("ADAngel",StartDialogueNoSet(Player1))
+END

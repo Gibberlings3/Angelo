@@ -1,0 +1,12 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+CreateVisualEffect("SPFLESHS",[1454.1398])
+SetGlobal("ADAngelWraithSpirit1","GLOBAL",1)
+Wait(1)
+CreateCreature("ADShar",[1454.1398],14)
+Wait(1)
+ActionOverride("ADAngel",StartDialogueNoSet("ADShar"))
+END

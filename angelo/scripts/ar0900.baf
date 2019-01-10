@@ -1,0 +1,9 @@
+IF
+Global("ADSakakiSpawn","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("ADOyaji",[2901.1861],0) 
+CreateCreature("ADSakaki",[2867.1875],0)
+SetGlobal("ADSakakiSpawn","GLOBAL",1)
+Continue()
+END

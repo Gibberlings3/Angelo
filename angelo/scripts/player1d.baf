@@ -1,0 +1,13 @@
+// Suu comes
+IF
+Global("ADAngelSuuSex","GLOBAL",1)
+OR(2)
+AreaCheck("AR5003")
+AreaCheck("AR5000")
+THEN
+RESPONSE #100
+CreateCreatureObjectOffset("ADSuu25",Player1,[5.5])  
+SetGlobal("ADAngelSuuSex","GLOBAL",2)
+ActionOverride("ADSuu25",StartDialogueNoSet(Player1))
+END
+

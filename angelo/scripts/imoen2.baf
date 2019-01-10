@@ -1,0 +1,84 @@
+// Imoen joins and sees Angelo
+IF
+Global("ADAngelImoen1","GLOBAL",0)
+InParty(Myself)
+InParty("ADAngel")
+See(Player1)
+See("ADAngel")
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("ADAngel",CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelImoen1","GLOBAL",1)
+END
+
+IF
+Global("ADAngelImoen1","GLOBAL",1)
+InParty(Myself)
+InParty("ADAngel")
+See(Player1)
+See("ADAngel")
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+!StateCheck("ADAngel",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("ADAngelImoen3","GLOBAL",0)
+RealGlobalTimerExpired("ADAngelImoenTimer","GLOBAL")
+InParty(Myself)
+InParty("ADAngel")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelImoen3","GLOBAL",1)
+END
+
+IF
+Global("ADAngelImoen3","GLOBAL",1)
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("ADAngelImoen4","GLOBAL",0)
+Global("ADAngelImoen3","GLOBAL",2)
+Global("ADAngelImoen2","GLOBAL",1)
+RealGlobalTimerExpired("ADAngelImoenTimer","GLOBAL")
+InParty(Myself)
+InParty("ADAngel")
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelImoen4","GLOBAL",1)
+END
+
+IF
+Global("ADAngelImoen4","GLOBAL",1)
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END

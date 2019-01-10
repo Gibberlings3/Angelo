@@ -1,0 +1,21 @@
+IF
+Global("ADSawaraIsHome","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("ADSawara",[802.406],0)
+CreateCreature("ADSuu",[669.522],11)
+CreateCreature("ADHayate",[907.330],0)
+CreateCreature("ADFox",[1065.429],0) 
+SetGlobal("ADSawaraIsHome","GLOBAL",1) 
+END
+
+IF
+Global("ADSawaraIsNotHome","GLOBAL",1)
+THEN
+RESPONSE #100
+ActionOverride("ADSawara",DestroySelf())
+ActionOverride("ADSuu",DestroySelf())
+ActionOverride("ADHayate",DestroySelf())
+ActionOverride("ADFox",DestroySelf())
+SetGlobal("ADSawaraIsNotHome","GLOBAL",2) 
+END

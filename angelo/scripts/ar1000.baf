@@ -1,0 +1,37 @@
+IF
+Global("ADSawaraBroughtMoney","GLOBAL",2)
+Global("ADOliverSpawn","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("ADOliver",[3061.2273],0) 
+CreateCreature("ADMerch",[3015.2235],0)
+CreateCreature("ADOli1",[3029.2244],0)
+CreateCreature("ADOli2",[3086.2310],0)
+CreateCreature("ADOli3",[3075.2221],0)
+ActionOverride("ADMerch",Kill(Myself))
+ActionOverride("ADOli1",Kill(Myself))
+ActionOverride("ADOli2",Kill(Myself))
+ActionOverride("ADOli3",Kill(Myself))
+SetGlobal("ADOliverSpawn","GLOBAL",1)
+END
+
+IF
+Dead("ADOliver")
+PartyHasItem("ADKatana")
+Global("ADAngelTeleportedTo","GLOBAL",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("ADAngelTeleportedToTime","GLOBAL",15)
+SetGlobal("ADAngelTeleportedTo","GLOBAL",1)
+END
+
+IF
+RealGlobalTimerExpired("ADAngelTeleportedToTime","GLOBAL")
+PartyHasItem("ADKatana")
+Global("ADAngelTeleportedTo","GLOBAL",1)
+THEN
+RESPONSE #100
+ClearAllActions()
+StartCutSceneMode()
+StartCutScene("ADACut2")
+END

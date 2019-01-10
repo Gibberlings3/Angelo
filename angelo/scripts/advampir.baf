@@ -1,0 +1,19 @@
+IF
+Global("ADAngelVampire","GLOBAL",1)
+Global("ADAngelTempVampire","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("ADAngelTempVampire","GLOBAL",1)
+Continue()
+END
+
+IF
+Global("ADAngelVampire","GLOBAL",1)
+Global("ADRomanceVampireTeleport","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("ADRomanceVampireTeleport","GLOBAL",1)
+CreateVisualEffectObject("SPDIMNDR",Myself)
+Wait(2)
+DestroySelf()
+END

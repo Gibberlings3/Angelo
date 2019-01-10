@@ -1,0 +1,27 @@
+// Anomen's conflict
+IF
+Global("ADAngelAnomenConflict","GLOBAL",0)
+Global("ADAngelRomanceActive","GLOBAL",1)
+Global("AnomenRomanceActive","GLOBAL",1)
+GlobalGT("ADAngelLoveTalk","GLOBAL",10)
+GlobalGT("LoveTalk","LOCALS",10)
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("ADAngelAnomenConflict","GLOBAL",1)
+END
+
+IF
+Global("ADAngelAnomenConflict","GLOBAL",1)
+InParty(Myself)
+!StateCheck(Player1,CD_STATE_NOTVALID) 
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END

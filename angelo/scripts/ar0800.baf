@@ -1,0 +1,7 @@
+IF
+Global("ADAngelSpawned","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("ADAngel",[1050.400],0) 
+SetGlobal("ADAngelSpawned","GLOBAL",1)
+END

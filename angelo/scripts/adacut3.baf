@@ -1,0 +1,14 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+ActionOverride("ADHayate",Enemy())
+ActionOverride("ADSawara",Enemy())
+ActionOverride("ADFox",DestroySelf()) 
+CreateVisualEffect("SPPLANAR",[975.350])
+CreateVisualEffect("SPPLANAR",[1000.350])
+CreateCreature("ADFoxbat",[975.350],0)
+CreateCreature("ADFoxbat",[1000.350],0)
+EndCutSceneMode()
+END

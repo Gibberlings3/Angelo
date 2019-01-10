@@ -1,0 +1,20 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+StorePartyLocations()
+Wait(1)
+FadeToColor([20.0],0)
+Wait(1)
+LeaveAreaLUAPanic("ARAD01","",[440.323],10)
+LeaveAreaLUA("ARAD01","",[440.323],10)
+ActionOverride("ADAngel",LeaveAreaLUA("ARAD01","",[472.307],3))
+MultiPlayerSync()
+Explore()
+Wait(1)
+FadeFromColor([20.0],0)
+MoveViewObject(Player1,INSTANT)
+Wait(1)
+ActionOverride("ADAngel",StartDialogueNoSet(Player1))
+END

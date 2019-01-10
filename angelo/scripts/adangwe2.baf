@@ -1,0 +1,17 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+Wait(1)
+FadeToColor([20.0],0)
+Wait(1)
+LeaveAreaLUA("AR5000","",[1568.1821],0)
+ActionOverride("ADAngel",LeaveAreaLUA("AR5000","",[1578.1811],0))
+MultiPlayerSync()
+SmallWait(1)
+Wait(1)
+FadeFromColor([20.0],0)
+Wait(1)
+ActionOverride("ADAngel",StartDialogueNoSet(Player1))
+END

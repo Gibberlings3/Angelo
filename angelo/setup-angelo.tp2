@@ -1,0 +1,579 @@
+BACKUP ~angelo/backup~
+SUPPORT ~https://www.gibberlings3.net/forum/147-angelo/~
+
+VERSION ~v6~
+
+README ~angelo/readme-angelo.html~
+AUTO_TRA ~angelo/%s~
+
+ALWAYS 
+
+  ACTION_IF NOT VARIABLE_IS_SET bg2_chapter THEN BEGIN // check to make this happen only once per install
+  
+    INCLUDE ~angelo/lib/cd_portrait_copy.tph~
+    
+    ACTION_IF GAME_IS ~eet~ BEGIN
+      OUTER_SET bg2_chapter = 12
+    END ELSE BEGIN
+      OUTER_SET bg2_chapter = 0
+    END
+    OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+      OUTER_SET bg2_chapter = bg2_chapter + 1
+      OUTER_SPRINT name_source ~bg2_chapter_%i%~
+      OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+    END
+
+    // convert strings to UTF-8 for BGEE/BG2EE
+    ACTION_DEFINE_ARRAY cdreload BEGIN setup-angelo END
+    ACTION_DEFINE_ARRAY cdnoconvert BEGIN setup-angelo-ee END // List of tra files that contain ONLY strings for the WeiDU installer and NOT game content
+    LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~angelo~ noconvert_array = cdnoconvert reload_array = cdreload END
+
+  END
+
+END
+  
+LANGUAGE ~English~ ~English~ ~angelo/english/setup-angelo.tra~
+
+BEGIN @0
+
+COPY ~angelo/areas~ ~override~
+
+LAF HANDLE_AUDIO STR_VAR audio_path = ~angelo/audio~ oggdec_path = ~angelo/audio~ sox_path = ~angelo/audio~ END
+
+COPY ~angelo/music~ ~music~
+
+COPY_EXISTING ~songlist.2da~ ~override~
+  REPLACE_TEXTUALLY ~^\(0[ %TAB%]+No_music[ %TAB%]+\)\*\*\*\*$~ ~\1BLANK.MUS~
+
+COPY ~angelo/icons~ ~override~
+
+LAF cd_portrait_npc STR_VAR source = ~adangel~ source_path = ~angelo/portraits~ END
+
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+
+  LOAD_TRA ~angelo/%LANGUAGE%/setup-angelo-ee.tra~
+  ADD_JOURNAL EXISTING TITLE (#74337) @10012
+  ADD_JOURNAL @10000 @10001 @10002 @10003 @10004 @10005 @10006 @10011
+  
+END ELSE BEGIN
+
+  COPY ~angelo/portraits/adsawars.bmp~ ~override~
+       ~angelo/portraits/adsuus.bmp~   ~override~
+
+END
+
+// CamDawg's code for State.ids
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~
+
+// Setting a script to the prison area, if it hasn't been done already
+COPY_EXISTING ~ar1005.are~ ~override~
+  WRITE_ASCII 0x94 ~ar1005~ #8
+  BUT_ONLY
+
+COPY ~angelo/items/adangbod.itm~ ~override~
+  SAY NAME1 @117
+  SAY NAME2 @117
+  SAY UNIDENTIFIED_DESC @118
+  SAY DESC @118
+
+COPY ~angelo/items/adsutra.itm~ ~override~
+  SAY NAME1 @112
+  SAY NAME2 @112
+  SAY UNIDENTIFIED_DESC @113
+  SAY DESC @113
+
+COPY ~angelo/items/adred.itm~ ~override~
+  SAY NAME1 @114
+  SAY NAME2 @114
+  SAY UNIDENTIFIED_DESC @115
+  SAY DESC @115
+
+COPY ~angelo/items/adleath.itm~ ~override~
+  SAY NAME1 @62
+  SAY NAME2 @62
+  SAY UNIDENTIFIED_DESC @63
+  SAY DESC @63
+
+COPY ~angelo/items/adgaunt.itm~ ~override~
+  SAY NAME2 @64
+  SAY DESC @65
+
+COPY ~angelo/items/adwaki.itm~ ~override~
+  SAY NAME2 @66
+  SAY DESC @67
+  PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // use EEs drain hp to caster functionality
+    LPF DELETE_EFFECT INT_VAR check_globals = 0 match_opcode = 17 END
+	LPF ALTER_EFFECT  INT_VAR check_globals = 0 match_opcode = 12 special = BIT0 END
+  END	
+
+COPY ~angelo/items/adring.itm~ ~override~
+  SAY NAME2 @68
+  SAY DESC @69
+
+COPY ~angelo/items/adkat1.itm~ ~override~
+  SAY NAME2 @72
+  SAY DESC @73
+
+COPY ~angelo/items/addiary.itm~ ~override~
+  SAY NAME1 @74
+  SAY NAME2 @74
+  SAY UNIDENTIFIED_DESC @75
+  SAY DESC @75
+
+COPY ~angelo/items/adninja.itm~ ~override~
+  SAY NAME2 @78
+  SAY DESC @79
+
+COPY ~angelo/items/adkatana.itm~ ~override~
+  SAY NAME2 @80
+  SAY DESC @81
+
+COPY ~angelo/items/adfinger.itm~ ~override~
+  SAY NAME1 @87
+  SAY NAME2 @87
+  SAY UNIDENTIFIED_DESC @88
+  SAY DESC @88
+
+COPY ~angelo/items/adlotus.itm~ ~override~
+  SAY NAME1 @89
+  SAY NAME2 @89
+  SAY UNIDENTIFIED_DESC @90
+  SAY DESC @90
+
+COPY ~angelo/items/adangbok.itm~ ~override~
+  SAY NAME1 @91
+  SAY NAME2 @91
+  SAY UNIDENTIFIED_DESC @92
+  SAY DESC @92
+
+COPY ~angelo/items/adnote.itm~ ~override~
+  SAY NAME1 @97
+  SAY NAME2 @97
+  SAY UNIDENTIFIED_DESC @98
+  SAY DESC @98
+
+COPY ~angelo/items/adgem.itm~ ~override~
+  SAY NAME1 @93
+  SAY NAME2 @93
+  SAY UNIDENTIFIED_DESC @94
+  SAY DESC @94
+
+APPEND ~itemdial.2da~ ~ADGEM    14117 ADGEM~ UNLESS ~^ADGEM[ %TAB%]~
+
+COPY ~angelo/stores/adstore.sto~ ~override~
+  SAY 0xc @116
+
+COPY ~angelo/characters/adangel.cre~ ~override~
+  SAY NAME1 @1
+  SAY NAME2 @1
+  SAY INITIAL_MEETING @2
+  SAY MORALE @3
+  SAY HAPPY @4
+  SAY UNHAPPY_ANNOYED @5
+  SAY UNHAPPY_SERIOUS @6
+  SAY UNHAPPY_BREAKING @7
+  SAY LEADER @8
+  SAY TIRED @9
+  SAY BORED @10
+  SAY BATTLE_CRY1 @11
+  SAY BATTLE_CRY2 @12
+  SAY BATTLE_CRY3 @13
+  SAY BATTLE_CRY4 @14
+  SAY BATTLE_CRY5 @15
+  SAY DAMAGE @16
+  SAY DYING @17
+  SAY HURT @18
+  SAY AREA_FOREST @19
+  SAY AREA_CITY @20
+  SAY AREA_DUNGEON @21
+  SAY AREA_DAY @22
+  SAY AREA_NIGHT @23
+  SAY SELECT_COMMON1 @24
+  SAY SELECT_COMMON2 @25
+  SAY SELECT_COMMON3 @26
+  SAY SELECT_COMMON4 @27
+  SAY SELECT_COMMON5 @28
+  SAY SELECT_COMMON6 @29
+  SAY SELECT_ACTION1 @30
+  SAY SELECT_ACTION2 @31
+  SAY SELECT_ACTION3 @32
+  SAY SELECT_ACTION4 @33
+  SAY SELECT_ACTION5 @34
+  SAY SELECT_ACTION6 @35
+  SAY SELECT_ACTION7 @36
+  SAY SELECT_RARE1 @37
+  SAY SELECT_RARE2 @38
+  SAY CRITICAL_HIT @39
+  SAY CRITICAL_MISS @40
+  SAY TARGET_IMMUNE @41
+  SAY INVENTORY_FULL @42
+  SAY SPELL_DISRUPTED @43
+  SAY BIO @44
+
+COPY ~angelo/characters/adangvam.cre~ ~override~
+  SAY NAME1 @119
+  SAY NAME2 @119
+  SAY BATTLE_CRY1 @126
+
+COPY ~angelo/characters/adsakaki.cre~ ~override~
+  SAY NAME1 @120
+  SAY NAME2 @120
+  SAY INITIAL_MEETING @127
+  SAY SELECT_COMMON1 @127
+  SAY SELECT_COMMON2 @128
+  SAY SELECT_COMMON3 @127
+
+COPY ~angelo/characters/adoyaji.cre~ ~override~
+  SAY NAME1 @121
+  SAY NAME2 @121
+  SAY INITIAL_MEETING @129
+  SAY SELECT_COMMON1 @129
+  SAY SELECT_COMMON2 @130
+  SAY SELECT_COMMON3 @131
+  SAY SELECT_COMMON4 @132
+
+COPY ~angelo/characters/adimogen.cre~ ~override~
+
+COPY_EXISTING ~bmerch1.cre~ ~override/admerch.cre~
+  WRITE_ASCII 0x280 ~admerch~  #32 // death variable
+  SAY NAME1 @101
+  SAY NAME2 @101
+
+COPY_EXISTING ~nobl4.cre~ ~override/adoli1.cre~
+  WRITE_ASCII 0x280 ~adoli1~  #32 // death variable
+  SAY NAME1 @107
+  SAY NAME2 @107
+
+COPY_EXISTING ~shop01.cre~ ~override/adoli2.cre~
+  WRITE_ASCII 0x280 ~adoli2~  #32 // death variable
+  SAY NAME1 @106
+  SAY NAME2 @106
+
+COPY ~angelo/characters/adoli3.cre~ ~override~
+  SAY NAME1 @108
+  SAY NAME2 @108
+
+COPY ~angelo/characters/adsawara.cre~ ~override~
+  SAY NAME1 @45
+  SAY NAME2 @45
+  SAY DAMAGE ~~ [adangs01]
+  SAY DYING ~~ [adangs02]
+  SAY INITIAL_MEETING @104
+  SAY SELECT_COMMON1 @104
+
+COPY ~angelo/characters/adsuu.cre~ ~override~
+  SAY NAME1 @46
+  SAY NAME2 @46
+
+COPY ~angelo/characters/adhayate.cre~ ~override~
+  SAY NAME1 @47
+  SAY NAME2 @47
+  SAY INITIAL_MEETING @103
+  SAY SELECT_COMMON1 @103
+
+COPY ~angelo/characters/adoliver.cre~ ~override~
+  SAY NAME1 @48
+  SAY NAME2 @48
+
+COPY ~angelo/characters/adpierre.cre~ ~override~
+  SAY NAME1 @49
+  SAY NAME2 @49
+
+COPY ~angelo/characters/adasgurz.cre~ ~override~
+  SAY NAME1 @50
+  SAY NAME2 @50
+
+COPY ~angelo/characters/adasg1.cre~ ~override~
+  SAY NAME1 @99
+  SAY NAME2 @99
+
+COPY ~angelo/characters/adasg2.cre~ ~override~
+  SAY NAME1 @99
+  SAY NAME2 @99
+
+COPY ~angelo/characters/admerzer.cre~ ~override~
+  SAY NAME1 @51
+  SAY NAME2 @51
+  SAY INITIAL_MEETING @105
+  SAY SELECT_COMMON1 @105
+
+COPY ~angelo/characters/adguard.cre~ ~override~
+  SAY NAME1 @100
+  SAY NAME2 @100
+
+COPY ~angelo/characters/adginpac.cre~ ~override~
+  SAY NAME1 @52
+  SAY NAME2 @52
+
+COPY ~angelo/characters/adkaede.cre~ ~override~
+  SAY NAME1 @53
+  SAY NAME2 @53
+
+COPY ~angelo/characters/adamara.cre~ ~override~
+  SAY NAME1 @55
+  SAY NAME2 @55
+
+COPY_EXISTING ~bamng01.cre~ ~override/adamag1.cre~
+  WRITE_ASCII 0x2cc ~adamag1~ #8  // dialogue
+  WRITE_ASCII 0x280 ~adamag1~ #32 // death variable
+
+COPY_EXISTING ~bamng01.cre~ ~override/adamag2.cre~
+  WRITE_ASCII 0x2cc ~adamag2~ #8  // dialogue
+  WRITE_ASCII 0x280 ~adamag2~ #32 // death variable
+
+COPY ~angelo/characters/adfox.cre~ ~override~
+     ~angelo/characters/adfoxbat.cre~ ~override~
+  SAY NAME1 @54
+  SAY NAME2 @54
+
+COPY ~angelo/characters/adblack.cre~ ~override~
+  SAY NAME1 @56
+  SAY NAME2 @56
+
+COPY ~angelo/characters/adangma1.cre~ ~override~
+  SAY NAME1 @58
+  SAY NAME2 @58
+
+COPY ~angelo/characters/adangma2.cre~ ~override~
+  SAY NAME1 @59
+  SAY NAME2 @59
+
+COPY ~angelo/characters/adangma3.cre~ ~override~
+  SAY NAME1 @60
+  SAY NAME2 @60
+
+COPY ~angelo/characters/adangma4.cre~ ~override~
+  SAY NAME1 @61
+  SAY NAME2 @61
+
+COPY ~angelo/characters/admerz1.cre~ ~override~
+  SAY NAME1 @133
+  SAY NAME2 @133
+
+COPY ~angelo/characters/admerz2.cre~ ~override~
+  SAY NAME1 @134
+  SAY NAME2 @134
+
+COPY ~angelo/characters/admerz3.cre~ ~override~
+  SAY NAME1 @135
+  SAY NAME2 @135
+
+COPY ~angelo/characters/admerz4.cre~ ~override~  
+     ~angelo/characters/admerz5.cre~ ~override~
+  SAY NAME1 @57
+  SAY NAME2 @57
+
+COMPILE  EVALUATE_BUFFER ~angelo/dialogue/badangel.d~
+                         ~angelo/dialogue/adangel.d~
+                         ~angelo/dialogue/adangelj.d~
+                         ~angelo/dialogue/adangelp.d~
+
+                         ~angelo/scripts/adangelb.baf~
+                         ~angelo/scripts/adangeld.baf~
+                         ~angelo/scripts/adangelf.baf~
+                         ~angelo/scripts/adangel.baf~
+                         ~angelo/scripts/adacut1.baf~
+                         ~angelo/scripts/adacut2.baf~
+                         ~angelo/scripts/adacut3.baf~
+                         ~angelo/scripts/adangt1.baf~
+                         ~angelo/scripts/adangt2.baf~
+                         ~angelo/scripts/arad02.baf~
+                         ~angelo/scripts/adstart.baf~
+                         ~angelo/scripts/adsawara.baf~
+                         ~angelo/scripts/adsuu.baf~
+                         ~angelo/scripts/adhayate.baf~
+                         ~angelo/scripts/adbla2.baf~
+
+                         ~angelo/scripts/advampir.baf~
+                         ~angelo/scripts/adangc53.baf~
+                         ~angelo/scripts/adangag.baf~
+                         ~angelo/scripts/adoyaji.baf~
+                         ~angelo/scripts/adangvam.baf~
+
+EXTEND_BOTTOM ~ar0500.bcs~ ~angelo/scripts/ar0500.baf~
+EXTEND_BOTTOM ~ar0515.bcs~ ~angelo/scripts/ar0515.baf~
+EXTEND_BOTTOM ~ar0800.bcs~ ~angelo/scripts/ar0800.baf~
+EXTEND_BOTTOM ~ar1000.bcs~ ~angelo/scripts/ar1000.baf~
+EXTEND_BOTTOM ~ar1005.bcs~ ~angelo/scripts/ar1005.baf~
+EXTEND_BOTTOM ~anomen.bcs~ ~angelo/scripts/anomen.baf~
+EXTEND_BOTTOM ~imoen2.bcs~ ~angelo/scripts/imoen2.baf~
+
+EXTEND_BOTTOM ~ar0809.bcs~   ~angelo/scripts/ar0809.baf~
+EXTEND_BOTTOM ~bodhiamb.bcs~ ~angelo/scripts/bodhiamb.baf~
+EXTEND_BOTTOM ~cleanse.bcs~  ~angelo/scripts/cleanse.baf~
+
+EXTEND_TOP    ~ar0900.bcs~ ~angelo/scripts/ar0900.baf~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN
+
+  ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+    ADD_JOURNAL @10007 @10008 @10009 @10010
+  END
+  
+  COPY ~angelo/characters/adang25.cre~ ~override~
+    SAY NAME1 @1
+    SAY NAME2 @1
+    SAY INITIAL_MEETING @2
+    SAY MORALE @3
+    SAY HAPPY @4
+    SAY UNHAPPY_ANNOYED @5
+    SAY UNHAPPY_SERIOUS @6
+    SAY UNHAPPY_BREAKING @7
+    SAY LEADER @8
+    SAY TIRED @9
+    SAY BORED @10
+    SAY BATTLE_CRY1 @11
+    SAY BATTLE_CRY2 @12
+    SAY BATTLE_CRY3 @13
+    SAY BATTLE_CRY4 @14
+    SAY BATTLE_CRY5 @15
+    SAY DAMAGE @16
+    SAY DYING @17
+    SAY HURT @18
+    SAY AREA_FOREST @19
+    SAY AREA_CITY @20
+    SAY AREA_DUNGEON @21
+    SAY AREA_DAY @22
+    SAY AREA_NIGHT @23
+    SAY SELECT_COMMON1 @24
+    SAY SELECT_COMMON2 @25
+    SAY SELECT_COMMON3 @26
+    SAY SELECT_COMMON4 @27
+    SAY SELECT_COMMON5 @28
+    SAY SELECT_COMMON6 @29
+    SAY SELECT_ACTION1 @30
+    SAY SELECT_ACTION2 @31
+    SAY SELECT_ACTION3 @32
+    SAY SELECT_ACTION4 @33
+    SAY SELECT_ACTION5 @34
+    SAY SELECT_ACTION6 @35
+    SAY SELECT_ACTION7 @36
+    SAY SELECT_RARE1 @37
+    SAY SELECT_RARE2 @38
+    SAY CRITICAL_HIT @39
+    SAY CRITICAL_MISS @40
+    SAY TARGET_IMMUNE @41
+    SAY INVENTORY_FULL @42
+    SAY SPELL_DISRUPTED @43
+    SAY BIO @44
+  
+  COPY ~angelo/items/adnote.itm~ ~override/adtamoko.itm~
+    SAY NAME1 @110
+    SAY NAME2 @110
+    SAY UNIDENTIFIED_DESC @111
+    SAY DESC @111
+
+  COPY ~angelo/characters/adtobbar.cre~ ~override~
+    SAY NAME1 @109
+    SAY NAME2 @109
+  
+  COPY_EXISTING ~adsuu.cre~ ~override/adsuu25.cre~
+    WRITE_ASCII 0x2cc ~adsuu25~ #8  // dialogue
+    WRITE_ASCII 0x280 ~adsuu25~ #32 // death variable
+  
+  COPY ~angelo/characters/adshar.cre~ ~override~
+  
+  COPY ~angelo/items/adwedr.itm~ ~override~
+    SAY NAME1 @95
+    SAY NAME2 @95
+    SAY UNIDENTIFIED_DESC @96
+    SAY DESC @96
+  
+  COPY ~angelo/characters/adninja.cre~ ~override/adnin01.cre~
+       ~angelo/characters/adninja.cre~ ~override/adnin02.cre~
+    SAY NAME1 @102
+    SAY NAME2 @102
+    WRITE_ASCII 0x248 ~adninja~ #8  // override
+    WRITE_ASCIIE 0x2cc ~%DEST_RES%~ #8  // dialogue
+    WRITE_ASCIIE 0x280 ~%DEST_RES%~ #32 // death variable
+  
+  COMPILE EVALUATE_BUFFER ~angelo/dialogue/badang25.d~
+                          ~angelo/dialogue/adang25.d~
+                          ~angelo/dialogue/adang25p.d~
+                          ~angelo/dialogue/adang25j.d~
+
+                          ~angelo/scripts/adangelw.baf~
+                          ~angelo/scripts/adang25.baf~
+                          ~angelo/scripts/adang25d.baf~
+                          ~angelo/scripts/adbath1.baf~
+                          ~angelo/scripts/adbath2.baf~
+                          ~angelo/scripts/adbath3.baf~
+                          ~angelo/scripts/adangwe1.baf~
+                          ~angelo/scripts/adangwe2.baf~
+                          ~angelo/scripts/adangwe3.baf~
+                          ~angelo/scripts/adangwe4.baf~
+                          ~angelo/scripts/adangwe5.baf~
+                          ~angelo/scripts/adninja.baf~
+                          ~angelo/scripts/adacut4.baf~
+
+  ACTION_IF !FILE_EXISTS ~eet/other/eet_functions.tph~ BEGIN
+  
+    COMPILE  ~angelo/dialogue/fatesp.d~
+  
+  END ELSE BEGIN
+  
+    INCLUDE  ~eet/other/eet_functions.tph~
+    LAF EET_NPC_TRANSITION INT_VAR type = 2 STR_VAR dv = adangel_cdtemp override_SoA = adangel override_ToB = adang25 dialog_ToB = adang25 string = ~@138~ stringPosDV = anomen END // angelo-as-romance
+    LAF EET_NPC_TRANSITION INT_VAR type = 2 STR_VAR dv = adangel        override_SoA = adangel override_ToB = adang25 dialog_ToB = adang25 string = ~@137~ stringPosDV = anomen END // angelo
+    
+	COPY_EXISTING ~fatesp.dlg~ ~override~ // add additional triggers/actions for angelo-as-romance
+	  DECOMPILE_AND_PATCH BEGIN
+	    REPLACE_TEXTUALLY ~Dead("adangel_cdtemp")~ ~Dead("adangel") Gender(Player1,FEMALE) CheckStatGT(Player1,11,CHR)~
+	    REPLACE_TEXTUALLY ~SetGlobal("adangel_cdtempSummoned","GLOBAL",1)~ ~SetGlobal("adangelSummoned","GLOBAL",1) SetGlobal("ADAngelRomanceActive","GLOBAL",2)~
+	    REPLACE_TEXTUALLY ~adangel_cdtemp~ ~adangel~ // any other cleanup
+	  END
+	  BUT_ONLY
+	  
+	COPY_EXISTING ~ar4000.bcs~ ~override~ // cleanup/disable cruft
+	              ~ar4500.bcs~ ~override~
+	  DECOMPILE_AND_PATCH BEGIN
+	    REPLACE_TEXTUALLY ~[ %TAB%]Global("adangel_cdtempSummoned","GLOBAL",[01])~ ~False()~
+	    REPLACE_TEXTUALLY ~adangel_cdtemp~ ~adangel~ // any other cleanup
+	  END
+	  BUT_ONLY
+  
+  END					  
+
+  EXTEND_BOTTOM ~anom25.bcs~   ~angelo/scripts/anom25.baf~
+  EXTEND_BOTTOM ~imoe25.bcs~   ~angelo/scripts/imoe25.baf~
+  EXTEND_BOTTOM ~haer25.bcs~   ~angelo/scripts/haer25.baf~
+  EXTEND_BOTTOM ~ar5003.bcs~   ~angelo/scripts/ar5003.baf~
+  EXTEND_TOP    ~ar6200.bcs~   ~angelo/scripts/ar6200.baf~
+  EXTEND_TOP    ~cut218g.bcs~  ~angelo/scripts/cut218g.baf~
+  EXTEND_BOTTOM ~player1d.bcs~ ~angelo/scripts/player1d.baf~
+  EXTEND_BOTTOM ~baldur25.bcs~ ~angelo/scripts/baldur25.baf~
+  
+  COPY ~angelo/epilogue/adangzz.2da~ ~override/adang01.2da~
+    REPLACE ~99999~ @82
+  COPY ~angelo/epilogue/adangzz.2da~ ~override/adang02.2da~
+    REPLACE ~99999~ @83
+  COPY ~angelo/epilogue/adangzz.2da~ ~override/adang03.2da~
+    REPLACE ~99999~ @86
+  COPY ~angelo/epilogue/adangzz.2da~ ~override/adang04.2da~
+    REPLACE ~99999~ @84
+  COPY ~angelo/epilogue/adangzz.2da~ ~override/adang05.2da~
+    REPLACE ~99999~ @85
+
+END
+
+APPEND ~interdia.2da~ ~ADANGEL     BADANGEL      BADANG25~ UNLESS ~^ADANGEL[ %TAB%]~
+
+APPEND ~pdialog.2da~ ~ADANGEL      ADANGELP           ADANGELJ          ADANGELD       ADANG25P           ADANG25J              ADANG25D              ADANG25~ UNLESS ~^ADANGEL[ %TAB%]~
+
+BEGIN @123
+SUBCOMPONENT @122
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~angelo/setup-angelo.tp2~ ~0~ @136
+
+LAF cd_portrait_copy STR_VAR source = ~sisterv~ destination = ~adangel~ source_path = ~angelo/portraits~ END
+
+BEGIN @124
+SUBCOMPONENT @122
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~angelo/setup-angelo.tp2~ ~0~ @136
+
+LAF cd_portrait_copy STR_VAR source = ~amaurea~ destination = ~adangel~ source_path = ~angelo/portraits~ END
+
+BEGIN @125
+SUBCOMPONENT @122
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~angelo/setup-angelo.tp2~ ~0~ @136
+
+LAF cd_portrait_copy STR_VAR source = ~cassinus~ destination = ~adangel~ source_path = ~angelo/portraits~ END
