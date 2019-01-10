@@ -22,8 +22,8 @@ REM /* the mod_readme link should point to the online readme and work fine as-is
 set ico_folder=%mod_folder%\style
 set audio_folder=%mod_folder%\audio
 set tispack_folder=%mod_folder%\tiz
-set iconv_folder=%mod_folder%\languages\iconv
-set mod_readme=http://htmlpreview.github.io/?https://github.com/Gibberlings3/Documentation/blob/master/readmes/readme-%mod_folder%.html
+set iconv_folder=%mod_folder%\iconv
+set mod_readme=https://gibberlings3.github.io/Documentation/readmes/readme-%mod_folder%.html
 
 REM /* MODIFY: if you don't need to build a specific package, you can disable it by setting the appropriate variable below to 0 */
 set build_windows=1
