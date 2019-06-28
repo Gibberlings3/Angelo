@@ -1,7 +1,7 @@
 BACKUP ~angelo/backup~
 SUPPORT ~https://www.gibberlings3.net/forum/147-angelo/~
 
-VERSION ~v7~
+VERSION ~v8~
 
 README ~angelo/readme-angelo.html~
 AUTO_TRA ~angelo/%s~
