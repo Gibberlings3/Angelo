@@ -5,7 +5,7 @@ Global("ADMetAngelo","GLOBAL",0)
 Global("ADAngelSaidHi","GLOBAL",0)
 THEN
 RESPONSE #100
-DisplayStringHead(Myself,~Hi, friend.~)
+DisplayStringHead(Myself,@90001)
 SetGlobal("ADAngelSaidHi","GLOBAL",1)
 END
 

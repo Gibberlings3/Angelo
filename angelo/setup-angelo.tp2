@@ -1,7 +1,7 @@
 BACKUP ~angelo/backup~
 SUPPORT ~https://www.gibberlings3.net/forum/147-angelo/~
 
-VERSION ~v8~
+VERSION ~v9~
 
 README ~angelo/readme-angelo.html~
 AUTO_TRA ~angelo/%s~
@@ -23,10 +23,9 @@ ALWAYS
       OUTER_SET EVAL ~%name_source%~ = bg2_chapter
     END
 
-    // convert strings to UTF-8 for BGEE/BG2EE
-    ACTION_DEFINE_ARRAY cdreload BEGIN setup-angelo END
-    ACTION_DEFINE_ARRAY cdnoconvert BEGIN setup-angelo-ee END // List of tra files that contain ONLY strings for the WeiDU installer and NOT game content
-    LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~angelo~ noconvert_array = cdnoconvert reload_array = cdreload END
+    // // convert strings to UTF-8 for BGEE/BG2EE
+          ACTION_DEFINE_ARRAY cdreload BEGIN setup-angelo END
+          LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~angelo~reload_array = cdreload END
 
   END
 
@@ -34,7 +33,10 @@ END
   
 LANGUAGE ~English~ ~English~ ~angelo/english/setup-angelo.tra~
 
+LANGUAGE ~Russian (by fufel007)~ ~russian~ ~angelo/russian/setup-angelo.tra~
+
 BEGIN @0
+LABEL ~SisterVigilantes_Angelo-main~
 
 COPY ~angelo/areas~ ~override~
 
@@ -561,19 +563,22 @@ APPEND ~interdia.2da~ ~ADANGEL     BADANGEL      BADANG25~ UNLESS ~^ADANGEL[ %TA
 APPEND ~pdialog.2da~ ~ADANGEL      ADANGELP           ADANGELJ          ADANGELD       ADANG25P           ADANG25J              ADANG25D              ADANG25~ UNLESS ~^ADANGEL[ %TAB%]~
 
 BEGIN @123
+LABEL ~SisterVigilantes_Angelo-Portrait_SisterVigilante~
 SUBCOMPONENT @122
-REQUIRE_PREDICATE MOD_IS_INSTALLED ~angelo/setup-angelo.tp2~ ~0~ @136
+REQUIRE_COMPONENT ~setup-angelo.tp2~ ~0~ @136
 
 LAF cd_portrait_copy STR_VAR source = ~sisterv~ destination = ~adangel~ source_path = ~angelo/portraits~ END
 
 BEGIN @124
+LABEL ~SisterVigilantes_Angelo-Portrait_Amaurea~
 SUBCOMPONENT @122
-REQUIRE_PREDICATE MOD_IS_INSTALLED ~angelo/setup-angelo.tp2~ ~0~ @136
+REQUIRE_COMPONENT ~setup-angelo.tp2~ ~0~ @136
 
 LAF cd_portrait_copy STR_VAR source = ~amaurea~ destination = ~adangel~ source_path = ~angelo/portraits~ END
 
 BEGIN @125
+LABEL ~SisterVigilantes_Angelo-Portrait_cassinus_free_fr~
 SUBCOMPONENT @122
-REQUIRE_PREDICATE MOD_IS_INSTALLED ~angelo/setup-angelo.tp2~ ~0~ @136
+REQUIRE_COMPONENT ~setup-angelo.tp2~ ~0~ @136
 
 LAF cd_portrait_copy STR_VAR source = ~cassinus~ destination = ~adangel~ source_path = ~angelo/portraits~ END
