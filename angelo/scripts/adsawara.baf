@@ -134,7 +134,7 @@ See(NearestEnemyOf(Myself))
 Global("SpellTrigger","LOCALS",0)
 THEN
 RESPONSE #100
-DisplayStringHead(Myself,~Spell Trigger - Fired~)
+DisplayStringHead(Myself,@90002)
 ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_TRUE_SIGHT)
 ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_DISPEL_MAGIC)
 ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_DISINTEGRATE)

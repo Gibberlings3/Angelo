@@ -5,7 +5,7 @@ GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
 Global("ADSuuSaidHi","GLOBAL",0)
 THEN
 RESPONSE #100
-DisplayStringHead(Myself,~Good evening, my <PRO_LADYLORD>.~)
+DisplayStringHead(Myself,@90000)
 SetGlobal("ADSuuSaidHi","GLOBAL",1)
 END
 

@@ -16,6 +16,7 @@ SetGlobal("ADOliverSpawn","GLOBAL",1)
 END
 
 IF
+!Dead("ADSawara")
 Dead("ADOliver")
 PartyHasItem("ADKatana")
 Global("ADAngelTeleportedTo","GLOBAL",0)
@@ -26,6 +27,7 @@ SetGlobal("ADAngelTeleportedTo","GLOBAL",1)
 END
 
 IF
+!Dead("ADSawara")
 RealGlobalTimerExpired("ADAngelTeleportedToTime","GLOBAL")
 PartyHasItem("ADKatana")
 Global("ADAngelTeleportedTo","GLOBAL",1)

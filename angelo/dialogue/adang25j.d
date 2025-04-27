@@ -352,7 +352,7 @@ CHAIN ADANG25J w1.yes
 == ADANG25J @130
 == BMINSC25 IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN @131
 == BKORGA25 IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN @132
-== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN @133
+== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("Sarevok",CD_STATE_NOTVALID)~ THEN @133
 == BIMOEN25 IF ~InParty("Imoen2") InMyArea("Imoen2") !StateCheck("Imoen2",CD_STATE_NOTVALID)~ THEN @134
 == BANOME25 IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @135
 == BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @136
@@ -374,7 +374,7 @@ CHAIN IF ~Global("ADAngelWedding","GLOBAL",3)~ THEN ADANG25J w2
 DO ~SetGlobal("ADAngelWedding","GLOBAL",4)~
 == SARTEM01 @148
 == BJAN25 IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN @149
-== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN @150
+== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("Sarevok",CD_STATE_NOTVALID)~ THEN @150
 == SARTEM01 @151
 END
 IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ EXTERN BANOME25 w2.object
@@ -445,7 +445,7 @@ CHAIN SARTEM01 w5
 == BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN @192
 == BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN @180
 == BJAN25 IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN @193
-== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN @194
+== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("Sarevok",CD_STATE_NOTVALID)~ THEN @194
 == SARTEM01 @195
 DO ~SetGlobal("ADAngelWedding","GLOBAL",5) SetGlobal("ADAngelMarried","GLOBAL",1) RealSetGlobalTimer("ADAngelToBTimer","GLOBAL",3600) ClearAllActions() StartCutSceneMode() StartCutScene("ADAngWe2")~
 EXIT
