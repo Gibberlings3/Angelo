@@ -35,6 +35,8 @@ LANGUAGE ~English~ ~English~ ~angelo/english/setup-angelo.tra~
 
 LANGUAGE ~Russian (by fufel007)~ ~russian~ ~angelo/russian/setup-angelo.tra~
 
+LANGUAGE ~Schinese~ ~schinese~ ~angelo/schinese/setup-angelo.tra~
+
 BEGIN @0
 LABEL ~SisterVigilantes_Angelo-main~
 
